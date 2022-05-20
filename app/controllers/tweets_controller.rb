@@ -37,6 +37,10 @@ before_action :move_to_index, except: [:index, :show]
     params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
   end
 
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
+  end
+  
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
