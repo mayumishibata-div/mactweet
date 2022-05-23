@@ -31,7 +31,7 @@ before_action :move_to_index, except: [:index, :show]
   def show
     # @tweet = Tweet.find(params[:id])
     @comment = Comment.new
-    @comment = @tweet.comment.includes(:user)
+    @comments = @tweet.comments.includes(:user)
   end
 
   private
