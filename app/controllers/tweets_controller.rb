@@ -35,7 +35,7 @@ before_action :move_to_index, except: [:index, :show]
   end
 
   def search
-    @tweet = Tweet.search(params[:keyword])
+    @tweets = Tweet.search(params[:keyword])
   end
 
   private
